@@ -1,6 +1,6 @@
 # logrusdemo
 
-## 1. Based on logrus, Add LFS hook to encapsulated to realize rotatation funtional log which can compress and delete old log entries
+## 1. Based on logrus, add LFS hook to encapsulated to realize rotatation funtional log which can compress and delete old log entries
 ## 2. logrus version: v1.7.0 
 ## 3. more examples come from [logrus][logrus]
 [logrus]: https://github.com/sirupsen/logrus

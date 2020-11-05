@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/bingerambo/logrusdemo/logs"
+	"github.com/bingerambo/logrus_demo/logs"
 	"github.com/sirupsen/logrus"
 	"time"
 )
