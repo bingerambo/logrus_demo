@@ -7,8 +7,10 @@ import (
 )
 
 const (
+	// linux
 	LOG_FILE_PATHNAME = "/var/log/aistation/kube-batch/kubebatch"
-	//LOG_FILE_PATHNAME = "D:/GO_projects/src/ithub.com/bingerambo/logrusdemo/cmd/kube-batch/kubebatch"
+	// windows
+	//LOG_FILE_PATHNAME = "D:/GO_projects/src/ithub.com/bingerambo/logrusdemo/cmd/kubebatch"
 )
 
 // global var
@@ -28,17 +30,17 @@ func StartUp() {
 	//	ALogger.Error("Failed to log to file, using default stderr")
 	//}
 
-	// make default output null
-	nullfile, err := os.OpenFile("/dev/null", os.O_WRONLY, 0666)
+	// make default output null, for linux and windows
+	nullfile, err := os.OpenFile(os.DevNull, os.O_WRONLY, 0666)
 	if err != nil {
 		ALogger.Fatalf("%v", err)
 	}
-	//defer nullfile.Close()
+
+	//defer outputfile.Close()
 	ALogger.SetOutput(nullfile)
 
 	filenameHook := filename.NewHook()
 	filenameHook.Field = "zzz_line"
-	//filenameHook.Field = "line"
 
 	// 设置filenamehook
 	ALogger.AddHook(filenameHook)
@@ -48,7 +50,7 @@ func StartUp() {
 	// 设置lfshook
 	ALogger.AddHook(lfHook)
 
-	// 设置stdoutHook
+	//设置stdoutHook
 	stdoutHook := NewStdoutHook()
 	ALogger.AddHook(stdoutHook)
 }
