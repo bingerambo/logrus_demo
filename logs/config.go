@@ -31,7 +31,8 @@ func StartUp() {
 	//}
 
 	// make default output null, for linux and windows
-	nullfile, err := os.OpenFile(os.DevNull, os.O_WRONLY, 0666)
+	var err error
+	nullfile, err = os.OpenFile(os.DevNull, os.O_WRONLY, 0666)
 	if err != nil {
 		ALogger.Fatalf("%v", err)
 	}
