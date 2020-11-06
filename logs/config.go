@@ -10,7 +10,7 @@ const (
 	// linux
 	LOG_FILE_PATHNAME = "/var/log/aistation/kube-batch/kubebatch"
 	// windows
-	//LOG_FILE_PATHNAME = "D:/GO_projects/src/ithub.com/bingerambo/logrusdemo/cmd/kubebatch"
+	//LOG_FILE_PATHNAME = "D:/GO_projects/src/github.com/bingerambo/logrus_demo/logs/kubebatch"
 )
 
 // global var
